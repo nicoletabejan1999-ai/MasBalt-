@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masbalt Construct — Lucrări de construcție și pregătire teren</title>
+<meta name="description" content="Lucrări de construcție și pregătire teren, cu utilaje proprii. Săpături, demolări, nivelări, curățări de teren și logistică. Solicită o ofertă rapidă.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="#top" class="logo" aria-label="Masbalt Construct - acasă">
+      <svg class="logo-icon" width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 44V22L24 8L44 22V44H30V30H18V44H4Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        <circle cx="24" cy="18" r="3" fill="currentColor"/>
+        <path d="M6 14C10 8 16 8 20 14C24 20 30 20 34 14C38 8 44 8 44 8" stroke="var(--orange)" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-text">MAS<span class="accent">BALT</span><small>CONSTRUCT</small></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Navigare principală">
+      <a href="#despre" class="nav-active">DESPRE NOI</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-btn" id="serviciiToggle" aria-expanded="false">SERVICII
+          <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-dropdown-menu" id="serviciiMenu">
+          <a href="#servicii">Curățare și pregătire terenuri</a>
+          <a href="#servicii">Săpături și infrastructură</a>
+          <a href="#servicii">Demolări și evacuări</a>
+          <a href="#servicii">Logistică și manipulare</a>
+          <a href="#servicii">Nivelări și compactări</a>
+          <a href="#servicii">Construcții și amenajări exterioare</a>
+        </div>
+      </div>
+      <a href="#stiri">ȘTIRI</a>
+      <a href="#posturi">POSTURI VACANTE</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="lang-pill" type="button" aria-label="Limba română">
+        <span class="flag" aria-hidden="true">
+          <svg width="20" height="14" viewBox="0 0 30 20"><rect width="10" height="20" fill="#003DA5"/><rect x="10" width="10" height="20" fill="#FFD100"/><rect x="20" width="10" height="20" fill="#CE1126"/></svg>
+        </span>
+        RO
+      </button>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Deschide meniul" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#despre">Despre noi</a>
+    <a href="#servicii">Servicii</a>
+    <a href="#stiri">Știri</a>
+    <a href="#posturi">Posturi vacante</a>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-diagonal" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <h1>Lucrări de construcție și pregătire teren, cu utilaje proprii</h1>
+      <p class="hero-sub">Tot ce ai nevoie pentru șantierul tău: săpături, demolări, nivelări, curățări de teren și logistică</p>
+      <a href="#form" class="btn btn-orange">Solicită o ofertă rapidă</a>
+      <p class="hero-note">*răspundem în max. 24h</p>
+    </div>
+    <div class="hero-media">
+      <img class="machine-figure" src="images/hero-machine.jpg" alt="Miniexcavator Bobcat E50 pe șantier">
+      <div class="machine-tag">
+        <span class="machine-tag-dot"></span>
+        <span>BOBCAT E50</span>
+      </div>
+    </div>
+  </div>
+  <div class="ticker ticker-dark" aria-hidden="true">
+    <div class="ticker-track">
+      <span>MASBALT&nbsp;&nbsp;◆&nbsp;&nbsp;MASBALT&nbsp;&nbsp;◆&nbsp;&nbsp;MASBALT&nbsp;&nbsp;◆&nbsp;&nbsp;MASBALT&nbsp;&nbsp;◆&nbsp;&nbsp;MASBALT&nbsp;&nbsp;◆&nbsp;&nbsp;</span>
+      <span>MASBALT&nbsp;&nbsp;◆&nbsp;&nbsp;MASBALT&nbsp;&nbsp;◆&nbsp;&nbsp;MASBALT&nbsp;&nbsp;◆&nbsp;&nbsp;MASBALT&nbsp;&nbsp;◆&nbsp;&nbsp;MASBALT&nbsp;&nbsp;◆&nbsp;&nbsp;</span>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST / VALUE SECTION -->
+<section class="trust" id="despre">
+  <div class="container">
+    <div class="trust-heading">
+      <svg class="trust-arrow" width="90" height="90" viewBox="0 0 90 90" fill="none">
+        <path d="M10 10H45V25H30L70 65V40H85V80H45V65L10 30V45H-5" stroke="var(--orange)" stroke-width="4"/>
+        <path d="M10 10H45V25H30L75 70" stroke="var(--orange)" stroke-width="4" fill="none"/>
+        <path d="M55 45L75 65M75 65V48M75 65H58" stroke="var(--orange)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <h2>Când începi o lucrare, cauți mai mult decât utilaj</h2>
+        <p>Ai nevoie de o echipă care vine la timp, știe exact ce are de făcut și lucrează curat</p>
+      </div>
+    </div>
+
+    <div class="trust-grid">
+      <div class="trust-card-dark">
+        <h3>La <span class="accent">Masbalt</span>, coordonarea e simplă</h3>
+        <p>Totul se face organizat, etapizat și sub control, fără a depinde de alți furnizori sau echipe externe</p>
+      </div>
+      <div class="trust-right">
+        <div class="trust-banner">
+          <span class="trust-number">15+</span>
+          <span>ani suntem pe teren și venim pregătiți</span>
+        </div>
+        <div class="trust-boxes">
+          <div class="trust-box">cu plan clar</div>
+          <div class="trust-box">cu echipă completă</div>
+        </div>
+        <div class="trust-box trust-box-full">cu ce trebuie pentru ca lucrarea să avanseze fără blocaje</div>
+      </div>
+    </div>
+
+    <div class="pill-row">
+      <div class="pill">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#fff" stroke-width="2"/><path d="M7 12l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Lăsăm șantierul curat și pregătit pentru pasul următor</span>
+      </div>
+      <div class="pill">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Primești oferta rapid – în cel mult 24h</span>
+      </div>
+      <div class="pill">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#fff" stroke-width="2"/><path d="M12 6v6l4 2" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Respectăm termenele stabilite, fără abateri</span>
+      </div>
+      <div class="pill">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 12V7a2 2 0 114 0v1M12 8V6a2 2 0 114 0v2m-4 0v-.5a2 2 0 114 0V10m-4-2v6m4-4v3a5 5 0 01-5 5H9a5 5 0 01-4-2l-2-3 1-1a1.5 1.5 0 012 0l1 1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Venim direct cu utilajele potrivite și echipele formate</span>
+      </div>
+      <div class="pill">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3a3 3 0 00-3 3v6a3 3 0 006 0V6a3 3 0 00-3-3z" stroke="#fff" stroke-width="1.8"/><path d="M12 15v3m-4 3h8" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span>Oamenii noștri știu meserie și lucrează autonom</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="servicii">
+  <div class="ticker ticker-dark" aria-hidden="true">
+    <div class="ticker-track">
+      <span>SERVICIILE NOASTRE&nbsp;&nbsp;•&nbsp;&nbsp;SERVICIILE NOASTRE&nbsp;&nbsp;•&nbsp;&nbsp;SERVICIILE NOASTRE&nbsp;&nbsp;•&nbsp;&nbsp;SERVICIILE NOASTRE&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+      <span>SERVICIILE NOASTRE&nbsp;&nbsp;•&nbsp;&nbsp;SERVICIILE NOASTRE&nbsp;&nbsp;•&nbsp;&nbsp;SERVICIILE NOASTRE&nbsp;&nbsp;•&nbsp;&nbsp;SERVICIILE NOASTRE&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section-heading">
+      <svg class="bracket-icon" width="46" height="46" viewBox="0 0 46 46" fill="none">
+        <path d="M2 2H22V10H10V22H2V2Z" stroke="var(--orange)" stroke-width="3"/>
+        <path d="M14 14L34 34M34 34V20M34 34H20" stroke="var(--orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h2>SERVICIILE NOASTRE</h2>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card">
+        <img class="service-img" src="images/svc-curatare.jpg" alt="Curățare și pregătire terenuri">
+        <span class="service-title">Curățare și pregătire terenuri</span>
+        <ul class="service-list" data-max="3">
+          <li>Defrișare vegetație și arbuști</li>
+          <li>Încărcare și evacuare moloz, asfalt, pavele</li>
+          <li>Nivelare teren și descărcare pământ vegetal</li>
+          <li>Creare acces spre terenuri blocate</li>
+        </ul>
+        <button class="show-all-btn" type="button">Afișează toate</button>
+      </article>
+
+      <article class="service-card">
+        <img class="service-img" src="images/svc-sapaturi.jpg" alt="Săpături și infrastructură">
+        <span class="service-title">Săpături și infrastructură</span>
+        <ul class="service-list" data-max="3">
+          <li>Fundații pentru casă sau clădire</li>
+          <li>Șanțuri pentru apă, electric, canalizare</li>
+          <li>Piscine, beciuri, cotlovane</li>
+          <li>Umpleri și compactări după rețele</li>
+        </ul>
+        <button class="show-all-btn" type="button">Afișează toate</button>
+      </article>
+
+      <article class="service-card">
+        <img class="service-img" src="images/svc-demolari.jpg" alt="Demolări și evacuări">
+        <span class="service-title">Demolări și evacuări</span>
+        <ul class="service-list" data-max="3">
+          <li>Anexe, garaje, ziduri, platforme</li>
+          <li>Spargere dale, beton, borduri</li>
+          <li>Încărcare moloz în containere proprii</li>
+          <li>Intervenții în curți interioare și spații înguste</li>
+        </ul>
+        <button class="show-all-btn" type="button">Afișează toate</button>
+      </article>
+
+      <article class="service-card">
+        <img class="service-img" src="images/svc-logistica.jpg" alt="Logistică și manipulare">
+        <span class="service-title">Logistică și manipulare</span>
+        <ul class="service-list" data-max="3">
+          <li>Încărcare și descărcare paleți</li>
+          <li>Mutare echipamente și scule grele</li>
+          <li>Transport intern pe șantier</li>
+          <li>Evacuare gunoi și deșeuri în containere</li>
+        </ul>
+        <button class="show-all-btn" type="button">Afișează toate</button>
+      </article>
+
+      <article class="service-card">
+        <img class="service-img" src="images/svc-nivelari.jpg" alt="Nivelări și compactări">
+        <span class="service-title">Nivelări și compactări</span>
+        <ul class="service-list" data-max="3">
+          <li>Modelare teren pentru fundații și pavaj</li>
+          <li>Întindere strat suport pentru beton/asfalt</li>
+          <li>Compactare cu utilaje specializate</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <img class="service-img" src="images/svc-constructii.jpg" alt="Construcții și amenajări exterioare">
+        <span class="service-title">Construcții și amenajări exterioare</span>
+        <ul class="service-list" data-max="3">
+          <li>Întindere și nivelare pământ vegetal</li>
+          <li>Transport/descărcare materiale: pietriș, balast, nisip</li>
+          <li>Modelare grădini, taluzuri, acoperiri conducte</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MACHINES -->
+<section class="machines" id="utilaje">
+  <div class="ticker ticker-dark" aria-hidden="true">
+    <div class="ticker-track">
+      <span>UTILAJELE NOASTRE&nbsp;&nbsp;•&nbsp;&nbsp;UTILAJELE NOASTRE&nbsp;&nbsp;•&nbsp;&nbsp;UTILAJELE NOASTRE&nbsp;&nbsp;•&nbsp;&nbsp;UTILAJELE NOASTRE&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+      <span>UTILAJELE NOASTRE&nbsp;&nbsp;•&nbsp;&nbsp;UTILAJELE NOASTRE&nbsp;&nbsp;•&nbsp;&nbsp;UTILAJELE NOASTRE&nbsp;&nbsp;•&nbsp;&nbsp;UTILAJELE NOASTRE&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section-heading">
+      <h2>UTILAJELE NOASTRE</h2>
+      <svg class="bracket-icon bracket-icon--end" width="46" height="46" viewBox="0 0 46 46" fill="none">
+        <path d="M44 2H24V10H36V22H44V2Z" stroke="var(--orange)" stroke-width="3"/>
+        <path d="M32 14L12 34M12 34V20M12 34H26" stroke="var(--orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <div class="machines-grid" id="machinesGrid">
+      <div class="machine-card">
+        <span class="machine-name">EXCAVATOR CAT</span>
+        <img class="machine-img" src="images/machine-cat.jpg" alt="Excavator CAT">
+        <span class="machine-caption">Pentru fundații mari și decopertări</span>
+      </div>
+      <div class="machine-card">
+        <span class="machine-name">BOBCAT E59</span>
+        <img class="machine-img" src="images/machine-e59.jpg" alt="Bobcat E59">
+        <span class="machine-caption">Pentru șanțuri și spații înguste</span>
+      </div>
+      <div class="machine-card">
+        <span class="machine-name">KOMATSU D37PXI-23 CU GPS</span>
+        <img class="machine-img" src="images/machine-komatsu.jpg" alt="Komatsu D37PXi-23 cu GPS">
+        <span class="machine-caption">Nivelări precise și modelări de teren</span>
+      </div>
+
+      <div class="machine-card machine-card--extra">
+        <span class="machine-name">MINIÎNCĂRCĂTOR + CIOCAN</span>
+        <img class="machine-img" src="images/machine-miniincarcator.jpg" alt="Miniîncărcător cu ciocan hidraulic">
+        <span class="machine-caption">Demolări rapide și spargeri punctuale</span>
+      </div>
+      <div class="machine-card machine-card--extra">
+        <span class="machine-name">BASCULANTE MAN / SCANIA</span>
+        <img class="machine-img" src="images/machine-basculante.jpg" alt="Basculante MAN / Scania">
+        <span class="machine-caption">Transport moloz, pământ, balast</span>
+      </div>
+      <div class="machine-card machine-card--extra">
+        <span class="machine-name">BOBCAT S185 (ROȚI)</span>
+        <img class="machine-img" src="images/machine-s185.jpg" alt="Bobcat S185 pe roți">
+        <span class="machine-caption">Manevrabilitate în curți mici sau șantiere cu acces dificil</span>
+      </div>
+      <div class="machine-card machine-card--extra">
+        <span class="machine-name">COMPACTOR CILINDRIC DUBLU (10T)</span>
+        <img class="machine-img" src="images/machine-compactor.jpg" alt="Compactor cilindric dublu 10 tone">
+        <span class="machine-caption">Tasare eficientă pentru asfalt și fundații</span>
+      </div>
+      <div class="machine-card machine-card--extra">
+        <span class="machine-name">MERCEDES ACTROS (EVACUATOR)</span>
+        <img class="machine-img" src="images/machine-actros.jpg" alt="Mercedes Actros evacuator">
+        <span class="machine-caption">Transport sigur pentru utilaje grele</span>
+      </div>
+    </div>
+
+    <button class="show-all-btn show-all-btn--machines" id="showAllMachines" type="button">Afișează toate</button>
+    <div class="center-btn"><a href="#form" class="btn btn-orange">Rezervă acum</a></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="container">
+    <div class="process-card">
+      <h2 class="process-title">CUM LUCRĂM?</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <span class="step-line" aria-hidden="true"></span>
+          <span class="step-num">1</span>
+          <h3>Ne contactezi</h3>
+          <p>ne scrii sau ne suni și ne spui ce ai de făcut</p>
+        </div>
+        <div class="process-step">
+          <span class="step-line" aria-hidden="true"></span>
+          <span class="step-num">2</span>
+          <h3>Analizăm lucrarea</h3>
+          <p>îți spunem ce utilaj e potrivit și estimăm costul</p>
+        </div>
+        <div class="process-step">
+          <span class="step-line" aria-hidden="true"></span>
+          <span class="step-num">3</span>
+          <h3>Venim echipați</h3>
+          <p>nu doar cu utilajul, ci și cu oameni care știu meserie</p>
+        </div>
+        <div class="process-step">
+          <span class="step-line" aria-hidden="true"></span>
+          <span class="step-num">4</span>
+          <h3>Executăm curat</h3>
+          <p>nu lăsăm haos, ci un teren bine pregătit</p>
+        </div>
+      </div>
+      <div class="center-btn">
+        <a href="#form" class="btn btn-orange">Trimite cererea</a>
+        <p class="process-note">Răspundem în cel mult 24h. Venim la lucrare când spunem</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / STATS -->
+<section class="about-stats" id="statistici">
+  <div class="container">
+    <h2 class="about-title">CINE SUNTEM? DESPRE <span class="accent">MASBALT</span></h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-num"><span class="stat-prefix">peste </span>15<span class="stat-suffix"> ani pe piață</span></span>
+        <p>în construcții și lucrări cu utilaje specializate</p>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num">50<span class="stat-suffix"> angajați</span></span>
+        <p>operatori calificați, ingineri și coordonatori de proiect</p>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num">2000<span class="stat-suffix"> lucrări</span></span>
+        <p>pentru gospodării, și pentru șantiere complexe</p>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num"><span class="stat-prefix">până la </span>5<span class="stat-suffix"> ani garanție</span></span>
+        <p>răspundem contractual la întârzieri sau calitate slabă</p>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-block">
+      <h3 class="faq-header">Întrebări frecvente</h3>
+      <div class="faq-card">
+        <details class="faq-item" open>
+          <summary><span class="faq-bracket">⌐</span> Lucrați și în weekend?</summary>
+          <p>Da, dacă avem disponibilitate, programăm lucrări și sâmbăta</p>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-bracket">⌐</span> Faceți și lucrări mici, în curți?</summary>
+          <p>Da. Avem utilaje compacte pentru spații înguste</p>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-bracket">⌐</span> Se poate factura pe firmă?</summary>
+          <p>Absolut. Lucrăm atât cu persoane fizice, cât și cu companii</p>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-bracket">⌐</span> Pot închiria doar utilajul, fără operator?</summary>
+          <p>Nu. Lucrăm doar cu operatorii noștri, pentru siguranță și calitate</p>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-bracket">⌐</span> Lucrați doar în Chișinău?</summary>
+          <p>Nu. Intervenim în toată Republica Moldova, în funcție de complexitatea lucrării</p>
+        </details>
+      </div>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <div class="testimonials-block">
+      <h3 class="faq-header">Ce spun clienții</h3>
+      <div class="faq-card testimonials-card">
+        <div class="testimonial">
+          <img class="avatar" src="images/avatar-mihai.jpg" alt="Mihai, Bubuieci">
+          <div>
+            <span class="t-name">Mihai, Bubuieci</span>
+            <p>„La ora 8 au fost în poartă. Au curățat tot, au încărcat molozul și în două zile aveam locul pregătit pentru turnat fundația.”</p>
+          </div>
+        </div>
+        <div class="testimonial">
+          <img class="avatar" src="images/avatar-veronica.jpg" alt="Veronica, firmă imobiliară">
+          <div>
+            <span class="t-name">Veronica, firmă imobiliară</span>
+            <p>„Lucrăm cu ei la toate construcțiile – vin echipați, nu trag de timp, și ne putem baza pe ei.”</p>
+          </div>
+        </div>
+        <div class="testimonial">
+          <img class="avatar" src="images/avatar-ion.jpg" alt="Ion, Chișinău">
+          <div>
+            <span class="t-name">Ion, Chișinău</span>
+            <p>„Am avut de săpat 70 m de șanț. N-au stricat gazonul, au lucrat precis. Bobcatul s-a încadrat perfect.”</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FORM -->
+<section class="cta-form" id="form">
+  <div class="cta-hazard" aria-hidden="true"></div>
+  <div class="cta-media">
+    <img src="images/hardhat.jpg" alt="Cască de protecție pe șantier">
+  </div>
+  <div class="container">
+    <div class="form-card">
+      <h2>Formular cerere ofertă</h2>
+      <p>Completează simplu<br>îți răspundem în max. 24h</p>
+      <form id="offerForm" novalidate>
+        <input type="text" name="nume" placeholder="Nume" required>
+        <input type="tel" name="telefon" placeholder="Telefon" required>
+        <input type="text" name="serviciu" placeholder="De ce serviciu ai nevoie?">
+        <input type="text" name="observatii" placeholder="Observații (detalii speciale)">
+        <button type="submit" class="btn btn-orange btn-full">Trimite cererea ta</button>
+        <p class="form-success" id="formSuccess" role="status">Mulțumim! Cererea ta a fost înregistrată, revenim în cel mult 24h.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- MASBALT INSEAMNA -->
+<section class="brand-block">
+  <div class="container">
+    <div class="brand-card">
+      <div class="brand-media">
+        <img src="images/brand-rooftop.jpg" alt="Echipă Masbalt pe șantier">
+        <span class="brand-media-overlay">MASBALT ÎNSEAMNĂ</span>
+      </div>
+      <div class="brand-text">
+        <h2 class="brand-heading-desktop">MASBALT ÎNSEAMNĂ</h2>
+        <ul class="brand-list">
+          <li>Utilaje proprii și echipe pregătite</li>
+          <li>Experiență reală în lucrări de teren</li>
+          <li>Prețuri corecte, fără surprize</li>
+          <li>Lucrări executate curat, rapid și organizat</li>
+        </ul>
+        <div class="brand-actions">
+          <a href="#form" class="btn btn-orange">Solicită ofertă</a>
+          <a href="tel:+373068300066" class="btn btn-outline">+373 068300066</a>
+        </div>
+        <p class="brand-note">Trimite acum detaliile lucrării și primești răspuns în cel mult 24h</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="logo">
+        <svg class="logo-icon" width="36" height="36" viewBox="0 0 48 48" fill="none">
+          <path d="M4 44V22L24 8L44 22V44H30V30H18V44H4Z" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M6 14C10 8 16 8 20 14C24 20 30 20 34 14C38 8 44 8 44 8" stroke="var(--orange)" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text logo-text--footer">MAS<span class="accent">BALT</span><small>CONSTRUCT</small></span>
+      </div>
+      <p class="footer-contact"><a href="tel:+37368300066">+373 683 000 66</a> &nbsp;·&nbsp; <a href="mailto:info@masbalt.md">info@masbalt.md</a></p>
+      <p class="footer-social-label">Social Media</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Instagram" class="social-icon social-icon--ig">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="6" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="#fff" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="#fff"/></svg>
+        </a>
+        <a href="#" aria-label="WhatsApp" class="social-icon social-icon--wa">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2z" stroke="#fff" stroke-width="1.8"/><path d="M8.5 8.7c-.2 1.6 1 4 2 5 1 1 3.3 2.3 4.9 2 .5-.1 1-.5 1.2-1l.2-.7-2-1-.6.7c-.9-.2-1.9-1-2.6-1.8-.6-.7-1.3-1.7-1.4-2.6l.7-.6-1-2-.7.2c-.5.2-.6.7-.7.8z" fill="#fff"/></svg>
+        </a>
+        <a href="#" aria-label="Viber" class="social-icon social-icon--vb">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3c5 0 8 2.7 8 7.5 0 4.3-3 7.5-8 7.5-1 0-1.8-.1-2.6-.4L5 19l1.1-3.3A7.6 7.6 0 014 10.5C4 5.7 7 3 12 3z" stroke="#fff" stroke-width="1.8"/><path d="M8.7 8.5c-.1 1.3.7 3.2 1.6 4.1.9.9 2.7 1.9 4 1.7.5-.1.9-.5 1-.9l.1-.6-1.7-.9-.5.6c-.7-.1-1.5-.7-2-1.4-.5-.6-1-1.4-1.1-2.1l.6-.5-.8-1.7-.6.2c-.4.1-.5.6-.6.6z" fill="#fff"/></svg>
+        </a>
+        <a href="#" aria-label="Telegram" class="social-icon social-icon--tg">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#fff" stroke-width="1.8"/><path d="M6.5 12.2l10-4-2.2 10.3-3-2.4-1.6 1.6-.4-3.1z" fill="#fff"/><path d="M6.5 12.2l3.9 1.4 5.5-5.4-6.4 5.4" fill="#0f1013"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-map">
+      <div class="map-ph" role="img" aria-label="Hartă locație Masbalt"></div>
+      <p>Chișinău, com. Hulboaca<br>Strada Ștefan cel Mare nr. 136</p>
+    </div>
+  </div>
+  <p class="footer-copy">© <span id="year"></span> Masbalt Construct. Toate drepturile rezervate.</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

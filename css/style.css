@@ -361,7 +361,11 @@ h1,h2,h3,h4{ margin: 0; font-weight: 700; }
   margin-bottom: 32px;
 }
 .trust-card-dark{
-  background: linear-gradient(160deg, var(--dark-3), var(--dark));
+  background-image:
+    linear-gradient(160deg, rgba(30,32,37,.82), rgba(20,21,24,.9)),
+    url('../images/trust-card.jpg');
+  background-size: cover;
+  background-position: center 35%;
   border-radius: var(--radius-md);
   padding: 32px 28px;
   color: #fff;
@@ -371,14 +375,6 @@ h1,h2,h3,h4{ margin: 0; font-weight: 700; }
   justify-content: center;
   position: relative;
   overflow: hidden;
-}
-.trust-card-dark::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    repeating-linear-gradient(115deg, rgba(255,255,255,.035) 0 2px, transparent 2px 26px),
-    repeating-linear-gradient(25deg, rgba(255,255,255,.03) 0 2px, transparent 2px 30px);
 }
 .trust-card-dark h3, .trust-card-dark p{ position: relative; margin: 0 0 10px; }
 .trust-card-dark p{ color: #cfcfd1; font-size: .95rem; margin-bottom: 0; }

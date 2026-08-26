@@ -241,7 +241,7 @@ h1,h2,h3,h4{ margin: 0; font-weight: 700; }
     linear-gradient(100deg, rgba(18,19,22,.92) 0%, rgba(18,19,22,.72) 40%, rgba(18,19,22,.35) 68%, rgba(18,19,22,.15) 100%),
     url('../images/hero-bg.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center 30%;
   z-index: 0;
 }
 .hero-diagonal{

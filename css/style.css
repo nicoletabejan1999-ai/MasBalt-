@@ -238,6 +238,11 @@ h1,h2,h3,h4{ margin: 0; font-weight: 700; }
   flex-shrink: 0;
 }
 
+@media (max-width: 899px){
+  .machine-tag{ bottom: -16px; }
+  .machine-line{ transform: translateY(16px); }
+}
+
 @media (min-width: 900px){
   .hero-inner{
     flex-direction: row;
@@ -436,41 +441,24 @@ h1,h2,h3,h4{ margin: 0; font-weight: 700; }
 .machines-grid{
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0;
+  gap: 24px;
+  max-width: 420px;
+  margin: 0 auto;
 }
-.machine-card{
-  text-align: center;
-  padding: 28px 12px;
-  border-bottom: 1px solid #e3e3e1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-}
-.machine-card:last-child{ border-bottom: none; }
-.machine-name{ font-weight: 700; letter-spacing: .02em; color: var(--text-dark); }
-.machine-img{
+.machine-card-img{
   width: 100%;
-  max-width: 320px;
-  aspect-ratio: 4/3;
-  object-fit: contain;
-  background: #fff;
-  border-radius: 14px;
-  padding: 10px;
+  border-radius: 24px;
+  box-shadow: 0 18px 40px -24px rgba(0,0,0,.3);
 }
-.machine-caption{ color: var(--text-gray); font-size: .92rem; }
-.machine-caption::before, .machine-caption::after{ content: "|"; color: var(--orange); margin: 0 10px; }
 
 .machine-card--extra{ display: none; }
-.machine-card--extra.show{ display: flex; }
+.machine-card--extra.show{ display: block; }
 .show-all-btn--machines{ display: flex; margin: 20px auto 0; }
 .show-all-btn--machines.is-hidden{ display: none; }
 
 @media (min-width: 760px){
-  .machines-grid{ grid-template-columns: repeat(3, 1fr); gap: 0 28px; }
-  .machine-card{ border-bottom: none; border-right: 1px solid #e3e3e1; }
-  .machine-card:nth-child(3n){ border-right: none; }
-  .machine-card--extra{ display: flex; }
+  .machines-grid{ grid-template-columns: repeat(3, 1fr); max-width: none; }
+  .machine-card--extra{ display: block; }
   .show-all-btn--machines{ display: none !important; }
 }
 
@@ -806,7 +794,6 @@ h1,h2,h3,h4{ margin: 0; font-weight: 700; }
 .social-icon--fb{ background: #1877F2; }
 .social-icon--ig{ background: radial-gradient(circle at 30% 110%, #fdf497, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
 .social-icon--wa{ background: #25D366; }
-.social-icon--vb{ background: #7360F2; }
 
 .footer-map{ display: flex; flex-direction: column; gap: 12px; }
 .map-embed{

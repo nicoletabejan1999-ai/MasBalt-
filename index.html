@@ -19,25 +19,6 @@
       <img class="logo-img" src="images/logo.png" alt="Masbalt Construct">
     </a>
 
-    <nav class="main-nav" id="mainNav" aria-label="Navigare principală">
-      <a href="#despre" class="nav-active">DESPRE NOI</a>
-      <div class="nav-dropdown">
-        <button class="nav-dropdown-btn" id="serviciiToggle" aria-expanded="false">SERVICII
-          <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="nav-dropdown-menu" id="serviciiMenu">
-          <a href="#servicii">Curățare și pregătire terenuri</a>
-          <a href="#servicii">Săpături și infrastructură</a>
-          <a href="#servicii">Demolări și evacuări</a>
-          <a href="#servicii">Logistică și manipulare</a>
-          <a href="#servicii">Nivelări și compactări</a>
-          <a href="#servicii">Construcții și amenajări exterioare</a>
-        </div>
-      </div>
-      <a href="#stiri">ȘTIRI</a>
-      <a href="#posturi">POSTURI VACANTE</a>
-    </nav>
-
     <div class="header-actions">
       <button class="lang-pill" type="button" aria-label="Limba română">
         <span class="flag" aria-hidden="true">
@@ -45,18 +26,7 @@
         </span>
         RO
       </button>
-      <button class="hamburger" id="hamburgerBtn" aria-label="Deschide meniul" aria-expanded="false" aria-controls="mobileNav">
-        <span></span><span></span><span></span>
-      </button>
     </div>
-  </div>
-
-  <!-- MOBILE NAV -->
-  <div class="mobile-nav" id="mobileNav">
-    <a href="#despre">Despre noi</a>
-    <a href="#servicii">Servicii</a>
-    <a href="#stiri">Știri</a>
-    <a href="#posturi">Posturi vacante</a>
   </div>
 </header>
 
@@ -436,6 +406,10 @@
         <input type="tel" name="telefon" placeholder="Telefon" required>
         <input type="text" name="serviciu" placeholder="De ce serviciu ai nevoie?">
         <input type="text" name="observatii" placeholder="Observații (detalii speciale)">
+        <label class="consent-check">
+          <input type="checkbox" name="consimtamant" required>
+          <span>Sunt de acord cu prelucrarea datelor mele cu caracter personal, conform Politicii de confidențialitate.</span>
+        </label>
         <button type="submit" class="btn btn-orange btn-full">Trimite cererea ta</button>
         <p class="form-success" id="formSuccess" role="status">Mulțumim! Cererea ta a fost înregistrată, revenim în cel mult 24h.</p>
       </form>
@@ -479,24 +453,24 @@
       <p class="footer-contact"><a href="tel:+37368300066">+373 683 000 66</a> &nbsp;·&nbsp; <a href="mailto:info@masbalt.md">info@masbalt.md</a></p>
       <p class="footer-social-label">Social Media</p>
       <div class="social-icons">
-        <a href="#" aria-label="Instagram" class="social-icon social-icon--ig">
+        <a href="https://www.facebook.com/share/198a4Z6UK8/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon social-icon--fb">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 8h2V4h-2c-2.2 0-4 1.8-4 4v2H9v4h2v8h4v-8h3l1-4h-4V8c0-.6.4-1 1-1z" fill="#fff"/></svg>
+        </a>
+        <a href="https://www.instagram.com/masbalt.construct?igsi=ZjRyZXZ1cXd3Y2dy" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon social-icon--ig">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="6" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="#fff" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="#fff"/></svg>
         </a>
-        <a href="#" aria-label="WhatsApp" class="social-icon social-icon--wa">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2z" stroke="#fff" stroke-width="1.8"/><path d="M8.5 8.7c-.2 1.6 1 4 2 5 1 1 3.3 2.3 4.9 2 .5-.1 1-.5 1.2-1l.2-.7-2-1-.6.7c-.9-.2-1.9-1-2.6-1.8-.6-.7-1.3-1.7-1.4-2.6l.7-.6-1-2-.7.2c-.5.2-.6.7-.7.8z" fill="#fff"/></svg>
-        </a>
-        <a href="#" aria-label="Viber" class="social-icon social-icon--vb">
+        <a href="viber://chat?number=%2B37368300066" aria-label="Viber" class="social-icon social-icon--vb">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3c5 0 8 2.7 8 7.5 0 4.3-3 7.5-8 7.5-1 0-1.8-.1-2.6-.4L5 19l1.1-3.3A7.6 7.6 0 014 10.5C4 5.7 7 3 12 3z" stroke="#fff" stroke-width="1.8"/><path d="M8.7 8.5c-.1 1.3.7 3.2 1.6 4.1.9.9 2.7 1.9 4 1.7.5-.1.9-.5 1-.9l.1-.6-1.7-.9-.5.6c-.7-.1-1.5-.7-2-1.4-.5-.6-1-1.4-1.1-2.1l.6-.5-.8-1.7-.6.2c-.4.1-.5.6-.6.6z" fill="#fff"/></svg>
         </a>
-        <a href="#" aria-label="Telegram" class="social-icon social-icon--tg">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#fff" stroke-width="1.8"/><path d="M6.5 12.2l10-4-2.2 10.3-3-2.4-1.6 1.6-.4-3.1z" fill="#fff"/><path d="M6.5 12.2l3.9 1.4 5.5-5.4-6.4 5.4" fill="#0f1013"/></svg>
+        <a href="https://wa.me/37368300066" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-icon social-icon--wa">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2z" stroke="#fff" stroke-width="1.8"/><path d="M8.5 8.7c-.2 1.6 1 4 2 5 1 1 3.3 2.3 4.9 2 .5-.1 1-.5 1.2-1l.2-.7-2-1-.6.7c-.9-.2-1.9-1-2.6-1.8-.6-.7-1.3-1.7-1.4-2.6l.7-.6-1-2-.7.2c-.5.2-.6.7-.7.8z" fill="#fff"/></svg>
         </a>
       </div>
     </div>
 
     <div class="footer-map">
-      <div class="map-ph" role="img" aria-label="Hartă locație Masbalt"></div>
-      <p>Chișinău, com. Hulboaca<br>Strada Ștefan cel Mare nr. 136</p>
+      <iframe class="map-embed" src="https://www.google.com/maps?q=Chi%C8%99in%C4%83u%2C+com.+Hulboaca%2C+Strada+%C8%98tefan+cel+Mare+nr.+136&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Locația Masbalt Construct"></iframe>
+      <p><a class="footer-address" href="https://www.google.com/maps/search/?api=1&query=Chi%C8%99in%C4%83u%2C+com.+Hulboaca%2C+Strada+%C8%98tefan+cel+Mare+nr.+136" target="_blank" rel="noopener">Chișinău, com. Hulboaca<br>Strada Ștefan cel Mare nr. 136</a></p>
     </div>
   </div>
   <p class="footer-copy">© <span id="year"></span> Masbalt Construct. Toate drepturile rezervate.</p>

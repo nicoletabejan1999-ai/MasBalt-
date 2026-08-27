@@ -3,41 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Mobile hamburger menu
-  const hamburgerBtn = document.getElementById('hamburgerBtn');
-  const mobileNav = document.getElementById('mobileNav');
-  if (hamburgerBtn && mobileNav) {
-    hamburgerBtn.addEventListener('click', () => {
-      const isOpen = mobileNav.classList.toggle('open');
-      hamburgerBtn.classList.toggle('open', isOpen);
-      hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
-    });
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileNav.classList.remove('open');
-        hamburgerBtn.classList.remove('open');
-        hamburgerBtn.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
-
-  // Desktop "Servicii" dropdown
-  const serviciiToggle = document.getElementById('serviciiToggle');
-  const serviciiMenu = document.getElementById('serviciiMenu');
-  if (serviciiToggle && serviciiMenu) {
-    serviciiToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = serviciiMenu.classList.toggle('open');
-      serviciiToggle.setAttribute('aria-expanded', String(isOpen));
-    });
-    document.addEventListener('click', (e) => {
-      if (!serviciiMenu.contains(e.target) && e.target !== serviciiToggle) {
-        serviciiMenu.classList.remove('open');
-        serviciiToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
-
   // Service card "Afișează toate" — expand bullet list
   document.querySelectorAll('.show-all-btn').forEach(btn => {
     if (btn.classList.contains('show-all-btn--machines')) return;

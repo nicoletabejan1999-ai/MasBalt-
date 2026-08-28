@@ -17,7 +17,7 @@
   --radius-md: 20px;
   --radius-full: 999px;
   --container: 1180px;
-  --font: 'Baloo 2', 'Nunito', system-ui, sans-serif;
+  --font: 'Poppins', system-ui, sans-serif;
 }
 
 *, *::before, *::after{ box-sizing: border-box; }

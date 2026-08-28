@@ -20,13 +20,19 @@
     </a>
 
     <div class="header-actions">
-      <button class="lang-pill" type="button" aria-label="Limba română">
-        <span class="flag" aria-hidden="true">
-          <svg width="20" height="14" viewBox="0 0 30 20"><rect width="10" height="20" fill="#003DA5"/><rect x="10" width="10" height="20" fill="#FFD100"/><rect x="20" width="10" height="20" fill="#CE1126"/></svg>
-        </span>
-        RO
+      <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Deschide meniul" aria-expanded="false" aria-controls="headerMenu">
+        <span></span><span></span><span></span>
       </button>
     </div>
+  </div>
+
+  <div class="header-menu" id="headerMenu">
+    <button class="lang-pill" type="button" aria-label="Limba română">
+      <span class="flag" aria-hidden="true">
+        <svg width="20" height="14" viewBox="0 0 30 20"><rect width="10" height="20" fill="#003DA5"/><rect x="10" width="10" height="20" fill="#FFD100"/><rect x="20" width="10" height="20" fill="#CE1126"/></svg>
+      </span>
+      RO
+    </button>
   </div>
 </header>
 
@@ -49,6 +55,7 @@
         <line x1="66" y1="66" x2="86" y2="84" stroke="#fff" stroke-width="0.5" opacity=".9"/>
       </svg>
       <div class="machine-tag">
+        <span class="machine-tag-dot"></span>
         <span>BOBCAT E50</span>
       </div>
     </div>

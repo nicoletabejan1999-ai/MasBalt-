@@ -3,6 +3,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // Header hamburger menu
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const headerMenu = document.getElementById('headerMenu');
+  if (hamburgerBtn && headerMenu) {
+    hamburgerBtn.addEventListener('click', () => {
+      const isOpen = headerMenu.classList.toggle('open');
+      hamburgerBtn.classList.toggle('open', isOpen);
+      hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+  }
+
   // Service card "Afișează toate" — expand bullet list
   document.querySelectorAll('.show-all-btn').forEach(btn => {
     if (btn.classList.contains('show-all-btn--machines')) return;

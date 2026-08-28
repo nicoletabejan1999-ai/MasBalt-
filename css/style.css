@@ -318,6 +318,7 @@ h1,h2,h3,h4{ margin: 0; font-weight: 700; }
   margin-bottom: 8px;
 }
 .trust-heading p{ color: var(--text-gray); margin: 0; font-size: .98rem; }
+.trust-arrow{ width: 74px; height: 74px; flex-shrink: 0; }
 
 .trust-grid{
   display: grid;

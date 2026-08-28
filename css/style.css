@@ -201,14 +201,6 @@ h1,h2,h3,h4{ margin: 0; font-weight: 700; }
   opacity: .82;
   z-index: 0;
 }
-.hero-accent-lines{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-}
 .hero-inner{
   position: relative;
   z-index: 1;

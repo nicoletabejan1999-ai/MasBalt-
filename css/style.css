@@ -432,6 +432,7 @@ h1,h2,h3,h4{ margin: 0; font-weight: 700; }
   aspect-ratio: 657/579;
   object-fit: cover;
   border-radius: 18px;
+  clip-path: polygon(0 0, 82% 0, 100% 18%, 100% 100%, 0 100%);
   margin-bottom: 18px;
 }
 .service-title{

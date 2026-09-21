@@ -99,10 +99,14 @@ document.addEventListener('DOMContentLoaded', () => {
       rows.forEach(r => {
         r.classList.remove('open');
         r.querySelector('.svc-panel').hidden = true;
+        const icon = r.querySelector('.svc-toggle-icon');
+        if (icon) icon.textContent = '+';
       });
       if (!isOpen) {
         row.classList.add('open');
         panel.hidden = false;
+        const icon = row.querySelector('.svc-toggle-icon');
+        if (icon) icon.textContent = '–';
       }
     });
   });

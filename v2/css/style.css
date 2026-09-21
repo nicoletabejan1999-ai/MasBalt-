@@ -137,6 +137,12 @@ ul{ margin: 0; padding: 0; list-style: none; }
 .btn:hover{ transform: translateY(-2px); box-shadow: 0 14px 30px -12px rgba(238,108,55,.55); }
 .btn-block{ width: 100%; justify-content: center; }
 
+.section-cta{
+  margin-top: 44px;
+  align-self: flex-start;
+}
+.statement-overlay .section-cta{ margin-top: 30px; align-self: center; }
+
 .scroll-cue{
   position: absolute;
   bottom: 22px; left: 50%;
@@ -495,6 +501,14 @@ ul{ margin: 0; padding: 0; list-style: none; }
 .form-ok.show{ display: block; }
 
 .contact-direct{ display: flex; flex-direction: column; gap: 18px; }
+.btn-whatsapp{
+  background: #1e2b23;
+  color: #fff;
+  border: 1px solid #2b3f31;
+}
+.btn-whatsapp svg{ color: #25D366; flex-shrink: 0; }
+.btn-whatsapp:hover{ box-shadow: 0 14px 30px -14px rgba(37,211,102,.45); }
+.contact-or{ color: var(--dim); font-size: .82rem; margin: 4px 0 -6px; }
 .contact-phone{ font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 700; letter-spacing: -.01em; }
 .contact-phone:hover{ color: var(--orange); }
 .contact-mail{ color: var(--dim); font-size: 1.05rem; }
@@ -516,10 +530,28 @@ ul{ margin: 0; padding: 0; list-style: none; }
   border-top: 1px solid var(--line);
 }
 .foot-logo{ height: 30px; opacity: .85; }
-.foot-social{ display: flex; gap: 18px; }
-.foot-social a{ font-size: .8rem; font-weight: 700; letter-spacing: .06em; color: var(--dim); }
-.foot-social a:hover{ color: var(--orange); }
+.foot-social{ display: flex; align-items: center; gap: 16px; }
+.foot-social-label{ color: var(--dim); font-size: .8rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+.foot-social-icons{ display: flex; gap: 10px; }
+.foot-icon{
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: #fff;
+  transition: background .25s ease, border-color .25s ease, transform .25s ease;
+}
+.foot-icon svg{ width: 19px; height: 19px; }
+.foot-icon:hover{ background: var(--orange); border-color: var(--orange); transform: translateY(-3px); }
 .foot-copy{ color: var(--dim); font-size: .8rem; margin: 0; width: 100%; order: 3; text-align: center; }
+
+@media (max-width: 479px){
+  .foot-social-label{ display: none; }
+}
 
 @media (min-width: 640px){
   .foot-copy{ width: auto; order: 0; text-align: left; }

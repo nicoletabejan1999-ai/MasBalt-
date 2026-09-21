@@ -8,34 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  // Hero video — a single-shot clip on tablet/desktop, a fully produced
-  // vertical clip (title/stats/services already baked in as motion
-  // graphics) on phone. Both are complete videos, not built from HTML
-  // captions, so this just swaps the source and forces playback: some
-  // browsers (notably Safari) don't reliably honor the declarative
-  // autoplay attribute after src is assigned programmatically.
-  const heroVideo = document.getElementById('heroVideo');
-  const heroIsWide = window.matchMedia('(min-width: 768px)');
-
-  if (heroVideo) {
-    if (heroIsWide.matches) {
-      heroVideo.poster = 'images/hero-bg-video-poster.jpg';
-      heroVideo.src = 'images/hero-bg-video.mp4';
-    } else {
-      heroVideo.poster = 'images/hero-mobile-video-poster.jpg';
-      heroVideo.src = 'images/hero-mobile-video.mp4';
-    }
-    heroVideo.load();
-    const playPromise = heroVideo.play();
-    if (playPromise && playPromise.catch) {
-      playPromise.catch(() => {
-        // Autoplay was blocked (rare with muted+playsinline) — retry once
-        // the page has had user interaction, or on the loadeddata event.
-        heroVideo.addEventListener('loadeddata', () => heroVideo.play().catch(() => {}), { once: true });
-      });
-    }
-  }
-
   // Reveal-on-scroll
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {

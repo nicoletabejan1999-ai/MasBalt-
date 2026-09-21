@@ -96,35 +96,18 @@ ul{ margin: 0; padding: 0; list-style: none; }
   overflow: hidden;
 }
 .hero-media{ position: absolute; inset: 0; }
-.hero-img, .hero-video{
+.hero-img{
   width: 100%; height: 100%;
   object-fit: cover;
-}
-.hero-img{
   animation: kenburns 22s ease-in-out infinite alternate;
 }
 @keyframes kenburns{
   from{ transform: scale(1); }
   to{ transform: scale(1.09); }
 }
-/* Two fully static <video> tags (own src/poster/autoplay in the HTML,
-   no JS involved in playback at all) toggled purely by breakpoint —
-   the mobile clip below 768px, the wider single-shot clip at/above it. */
-.hero-video{ position: absolute; inset: 0; }
-.hero-video--desktop{ display: none; }
-@media (min-width: 768px){
-  .hero-video--mobile{ display: none; }
-  .hero-video--desktop{ display: block; }
-}
 .hero-fade{
   position: absolute; inset: 0;
   background: linear-gradient(0deg, rgba(12,12,13,.96) 0%, rgba(12,12,13,.55) 42%, rgba(12,12,13,.25) 65%, rgba(12,12,13,.15) 100%);
-}
-/* The mobile hero clip already has the title/branding/subtitle baked in
-   as motion graphics, so the HTML text is redundant there — keep only
-   the CTA button on phones. */
-@media (max-width: 767px){
-  .hero-text-only{ display: none; }
 }
 .hero-content{
   position: relative;

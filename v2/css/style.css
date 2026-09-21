@@ -313,25 +313,6 @@ ul{ margin: 0; padding: 0; list-style: none; }
 .svc-panel-more{ color: var(--dim); font-size: .92rem; }
 .svc-panel-more a{ color: var(--orange); font-weight: 600; text-decoration: none; }
 .svc-panel-more a:hover{ text-decoration: underline; }
-.svc-preview{
-  display: none;
-  position: fixed;
-  width: 300px; height: 220px;
-  border-radius: 14px;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 50;
-  opacity: 0;
-  transform: scale(.92);
-  transition: opacity .25s ease, transform .25s ease;
-  box-shadow: 0 30px 60px -20px rgba(0,0,0,.6);
-}
-.svc-preview.show{ opacity: 1; transform: scale(1); }
-.svc-preview img{ width: 100%; height: 100%; object-fit: cover; }
-
-@media (min-width: 860px){
-  .svc-preview{ display: block; }
-}
 
 /* ---------- fleet ---------- */
 .fleet{ padding: 0 6vw 110px; border-bottom: 1px solid var(--line); }

@@ -42,25 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.4 });
   stats.forEach(el => statsIO.observe(el));
 
-  // Service list hover preview (desktop only)
-  const preview = document.getElementById('svcPreview');
-  const previewImg = document.getElementById('svcPreviewImg');
   const rows = document.querySelectorAll('.svc-row');
-  if (preview && previewImg) {
-    rows.forEach(row => {
-      row.addEventListener('mouseenter', () => {
-        previewImg.src = row.dataset.img;
-        preview.classList.add('show');
-      });
-      row.addEventListener('mousemove', (e) => {
-        preview.style.left = (e.clientX + 24) + 'px';
-        preview.style.top = (e.clientY - 110) + 'px';
-      });
-      row.addEventListener('mouseleave', () => {
-        preview.classList.remove('show');
-      });
-    });
-  }
 
   // Service list — tap/click a service to see the equipment used for it
   const FLEET_TOTAL = 36;

@@ -215,6 +215,37 @@ ul{ margin: 0; padding: 0; list-style: none; }
   gap: 40px;
   border-bottom: 1px solid var(--line);
 }
+.about-media{ display: flex; flex-direction: column; gap: 28px; }
+.about-video{
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 9/16;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 30px 60px -30px rgba(0,0,0,.7);
+}
+.about-video video{ width: 100%; height: 100%; object-fit: cover; display: block; }
+.about-video-play{
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,.95);
+  color: #0c0c0d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease;
+}
+.about-video-play svg{ margin-left: 3px; }
+.about-video-play:hover{ transform: scale(1.08); background: #fff; }
+.about-video-play.hide{ display: none; }
 .about-quote{ position: relative; }
 .quote-mark{
   display: block;
@@ -225,7 +256,7 @@ ul{ margin: 0; padding: 0; list-style: none; }
   margin-bottom: 6px;
 }
 .about-quote p{
-  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  font-size: clamp(1.15rem, 2.4vw, 1.4rem);
   font-weight: 500;
   line-height: 1.4;
   margin: 0;

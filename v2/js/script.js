@@ -8,6 +8,27 @@ document.addEventListener('DOMContentLoaded', () => {
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
+  // About video — click-to-play (not autoplay), so the browser only ever
+  // starts it on a real user gesture, which always works reliably.
+  const aboutVideoCard = document.getElementById('aboutVideo');
+  if (aboutVideoCard) {
+    const video = aboutVideoCard.querySelector('video');
+    const playBtn = aboutVideoCard.querySelector('.about-video-play');
+    playBtn.addEventListener('click', () => {
+      video.controls = true;
+      video.muted = false;
+      video.play();
+      playBtn.classList.add('hide');
+    });
+    video.addEventListener('pause', () => {
+      if (!video.ended) playBtn.classList.remove('hide');
+    });
+    video.addEventListener('ended', () => {
+      playBtn.classList.remove('hide');
+      video.controls = false;
+    });
+  }
+
   // Reveal-on-scroll
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {

@@ -64,6 +64,39 @@ ul{ margin: 0; padding: 0; list-style: none; }
 }
 .bar-cta:hover{ border-color: var(--orange); background: rgba(238,108,55,.1); }
 
+.bar-actions{ display: flex; align-items: center; gap: 12px; }
+.bar-whatsapp{
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff;
+  box-shadow: 0 4px 14px -4px rgba(37,211,102,.6);
+  animation: wa-vibrate 4.5s ease-in-out infinite;
+}
+.bar-whatsapp svg{ width: 20px; height: 20px; }
+.bar-whatsapp:hover{ filter: brightness(1.08); }
+
+@keyframes wa-vibrate{
+  0%, 12%, 100%{ transform: rotate(0deg); }
+  1%{ transform: rotate(-16deg); }
+  2%{ transform: rotate(14deg); }
+  3%{ transform: rotate(-12deg); }
+  4%{ transform: rotate(10deg); }
+  5%{ transform: rotate(-8deg); }
+  6%{ transform: rotate(6deg); }
+  7%{ transform: rotate(-4deg); }
+  8%{ transform: rotate(2deg); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .bar-whatsapp{ animation: none; }
+}
+
 /* ---------- hero ---------- */
 .hero{
   position: relative;

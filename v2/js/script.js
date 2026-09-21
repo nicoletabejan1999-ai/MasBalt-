@@ -8,6 +8,39 @@ document.addEventListener('DOMContentLoaded', () => {
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
+  // Hero video caption sync — captions live in the DOM (not baked into the
+  // video) so they're never clipped by object-fit: cover on tall viewports.
+  const heroVideo = document.querySelector('.hero-video');
+  const heroCaption = document.getElementById('heroCaption');
+  const heroCaptionTag = document.getElementById('heroCaptionTag');
+  const heroCaptionText = document.getElementById('heroCaptionText');
+  if (heroVideo && heroCaption) {
+    const HERO_TIMELINE = [
+      { start: 0.0, end: 1.95, tag: null, caption: 'UTILAJE PROPRII. ECHIPE PREGĂTITE.' },
+      { start: 1.95, end: 3.7, tag: '01', caption: 'CURĂȚARE & PREGĂTIRE TEREN' },
+      { start: 3.7, end: 5.45, tag: '02', caption: 'SĂPĂTURI & INFRASTRUCTURĂ' },
+      { start: 5.45, end: 7.2, tag: '03', caption: 'DEMOLĂRI & EVACUĂRI' },
+      { start: 7.2, end: 8.95, tag: '04', caption: 'LOGISTICĂ & EVACUARE DEȘEURI' },
+      { start: 8.95, end: 10.7, tag: '05', caption: 'NIVELĂRI & COMPACTĂRI' },
+      { start: 10.7, end: 12.8, tag: '06', caption: 'AMENAJĂRI EXTERIOARE' },
+    ];
+    let activeIndex = -1;
+    heroVideo.addEventListener('timeupdate', () => {
+      const t = heroVideo.currentTime;
+      const idx = HERO_TIMELINE.findIndex(seg => t >= seg.start && t < seg.end);
+      if (idx === -1 || idx === activeIndex) return;
+      activeIndex = idx;
+      const seg = HERO_TIMELINE[idx];
+      heroCaption.classList.remove('show');
+      window.setTimeout(() => {
+        heroCaptionTag.textContent = seg.tag ? seg.tag : '';
+        heroCaptionTag.style.display = seg.tag ? '' : 'none';
+        heroCaptionText.textContent = seg.caption;
+        heroCaption.classList.add('show');
+      }, 120);
+    });
+  }
+
   // Reveal-on-scroll
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {

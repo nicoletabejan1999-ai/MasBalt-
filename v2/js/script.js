@@ -62,6 +62,51 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Service list — tap/click a service to see the equipment used for it
+  const FLEET_TOTAL = 36;
+  const EQUIPMENT = {
+    scania: { img: 'images/eq-scania.webp', label: 'Autobasculantă Scania G490' },
+    cat: { img: 'images/eq-cat.webp', label: 'Excavator Caterpillar M316D' },
+    e50: { img: 'images/eq-e50.webp', label: 'Mini-excavator Bobcat E50' },
+    s185: { img: 'images/eq-s185.webp', label: 'Încărcător frontal Bobcat S185' },
+    jcb: { img: 'images/eq-jcb.webp', label: 'Buldoexcavator JCB 3CX' },
+    dynapac: { img: 'images/eq-dynapac.webp', label: 'Compactor Dynapac 10T' },
+    'komatsu-d37': { img: 'images/eq-komatsu-d37.webp', label: 'Buldozer Komatsu D37PX-23' },
+    'komatsu-pc78': { img: 'images/eq-komatsu-pc78.webp', label: 'Excavator pe șenile Komatsu PC78' },
+    actros: { img: 'images/eq-actros.webp', label: 'Evacuator Mercedes-Benz Actros' },
+  };
+
+  rows.forEach(row => {
+    const panel = row.querySelector('.svc-panel');
+    const top = row.querySelector('.svc-row-top');
+    if (!panel || !top) return;
+
+    const slugs = (row.dataset.eq || '').split(',').map(s => s.trim()).filter(Boolean);
+    const cardsHtml = slugs
+      .map(slug => EQUIPMENT[slug])
+      .filter(Boolean)
+      .map(eq => `<div class="svc-eq-card"><img src="${eq.img}" alt="${eq.label}" loading="lazy"><span>${eq.label}</span></div>`)
+      .join('');
+    const restCount = FLEET_TOTAL - slugs.length;
+    panel.innerHTML = `
+      <div class="svc-panel-inner">
+        ${cardsHtml}
+        <p class="svc-panel-more">+ restul parcului — <a href="#parc">${restCount}+ utilaje proprii →</a></p>
+      </div>`;
+
+    top.addEventListener('click', () => {
+      const isOpen = row.classList.contains('open');
+      rows.forEach(r => {
+        r.classList.remove('open');
+        r.querySelector('.svc-panel').hidden = true;
+      });
+      if (!isOpen) {
+        row.classList.add('open');
+        panel.hidden = false;
+      }
+    });
+  });
+
   // Offer form — client-side only (no backend configured)
   const form = document.getElementById('offerForm');
   const ok = document.getElementById('formOk');

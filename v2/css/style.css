@@ -209,15 +209,17 @@ ul{ margin: 0; padding: 0; list-style: none; }
 .work-sub{ color: var(--dim); font-size: 1.05rem; max-width: 46ch; margin: 0; }
 .svc-list{ border-top: 1px solid var(--line); }
 .svc-row{
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+}
+.svc-row-top{
   display: flex;
   align-items: center;
   gap: 24px;
   padding: 26px 4px;
-  border-bottom: 1px solid var(--line);
-  cursor: pointer;
   transition: padding-left .3s ease;
 }
-.svc-row:hover{ padding-left: 16px; }
+.svc-row:hover .svc-row-top{ padding-left: 16px; }
 .svc-index{ color: var(--orange); font-weight: 700; font-size: .85rem; width: 30px; flex-shrink: 0; }
 .svc-body{ flex: 1; display: flex; flex-direction: column; gap: 8px; }
 .svc-name{
@@ -227,15 +229,40 @@ ul{ margin: 0; padding: 0; list-style: none; }
   transition: color .3s ease;
 }
 .svc-desc{ color: var(--dim); font-size: .92rem; max-width: 52ch; }
-.svc-row:hover .svc-name{ color: var(--orange); }
+.svc-row:hover .svc-name, .svc-row.open .svc-name{ color: var(--orange); }
 .svc-arrow{
   font-size: 1.4rem;
   color: var(--dim);
   opacity: 0;
   transform: translateX(-8px);
   transition: opacity .3s ease, transform .3s ease;
+  flex-shrink: 0;
 }
 .svc-row:hover .svc-arrow{ opacity: 1; transform: translateX(0); }
+.svc-row.open .svc-arrow{ opacity: 1; transform: rotate(90deg); }
+
+.svc-panel{
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 4px;
+  transition: max-height .35s ease, padding-bottom .35s ease;
+}
+.svc-row.open .svc-panel{ max-height: 320px; padding-bottom: 28px; }
+.svc-panel-inner{ display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding-top: 4px; }
+.svc-eq-card{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #161617;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 8px 18px 8px 8px;
+}
+.svc-eq-card img{ width: 62px; height: 62px; object-fit: contain; flex-shrink: 0; }
+.svc-eq-card span{ font-size: .88rem; font-weight: 600; }
+.svc-panel-more{ color: var(--dim); font-size: .92rem; }
+.svc-panel-more a{ color: var(--orange); font-weight: 600; text-decoration: none; }
+.svc-panel-more a:hover{ text-decoration: underline; }
 .svc-preview{
   display: none;
   position: fixed;

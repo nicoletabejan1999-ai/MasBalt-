@@ -8,13 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  // Hero video — a wider single-shot clip on tablet/desktop, the
-  // multi-service montage (with synced captions) on phone until a
-  // phone-specific clip replaces it.
+  // Hero video — a single-shot clip on tablet/desktop, a fully produced
+  // vertical clip (title/stats/services already baked in as motion
+  // graphics) on phone. Both are complete videos, not built from HTML
+  // captions, so this just swaps the source and forces playback: some
+  // browsers (notably Safari) don't reliably honor the declarative
+  // autoplay attribute after src is assigned programmatically.
   const heroVideo = document.getElementById('heroVideo');
-  const heroCaption = document.getElementById('heroCaption');
-  const heroCaptionTag = document.getElementById('heroCaptionTag');
-  const heroCaptionText = document.getElementById('heroCaptionText');
   const heroIsWide = window.matchMedia('(min-width: 768px)');
 
   if (heroVideo) {
@@ -22,40 +22,18 @@ document.addEventListener('DOMContentLoaded', () => {
       heroVideo.poster = 'images/hero-bg-video-poster.jpg';
       heroVideo.src = 'images/hero-bg-video.mp4';
     } else {
-      heroVideo.poster = 'images/hero-reel-poster.jpg';
-      heroVideo.src = 'images/hero-reel.mp4';
+      heroVideo.poster = 'images/hero-mobile-video-poster.jpg';
+      heroVideo.src = 'images/hero-mobile-video.mp4';
     }
     heroVideo.load();
-  }
-
-  // Captions live in the DOM (not baked into the video) so they're never
-  // clipped by object-fit: cover on tall viewports. Only relevant to the
-  // mobile montage, which has distinct labeled segments.
-  if (heroVideo && heroCaption && !heroIsWide.matches) {
-    const HERO_TIMELINE = [
-      { start: 0.0, end: 1.95, tag: null, caption: 'UTILAJE PROPRII. ECHIPE PREGĂTITE.' },
-      { start: 1.95, end: 3.7, tag: '01', caption: 'CURĂȚARE & PREGĂTIRE TEREN' },
-      { start: 3.7, end: 5.45, tag: '02', caption: 'SĂPĂTURI & INFRASTRUCTURĂ' },
-      { start: 5.45, end: 7.2, tag: '03', caption: 'DEMOLĂRI & EVACUĂRI' },
-      { start: 7.2, end: 8.95, tag: '04', caption: 'LOGISTICĂ & EVACUARE DEȘEURI' },
-      { start: 8.95, end: 10.7, tag: '05', caption: 'NIVELĂRI & COMPACTĂRI' },
-      { start: 10.7, end: 12.8, tag: '06', caption: 'AMENAJĂRI EXTERIOARE' },
-    ];
-    let activeIndex = -1;
-    heroVideo.addEventListener('timeupdate', () => {
-      const t = heroVideo.currentTime;
-      const idx = HERO_TIMELINE.findIndex(seg => t >= seg.start && t < seg.end);
-      if (idx === -1 || idx === activeIndex) return;
-      activeIndex = idx;
-      const seg = HERO_TIMELINE[idx];
-      heroCaption.classList.remove('show');
-      window.setTimeout(() => {
-        heroCaptionTag.textContent = seg.tag ? seg.tag : '';
-        heroCaptionTag.style.display = seg.tag ? '' : 'none';
-        heroCaptionText.textContent = seg.caption;
-        heroCaption.classList.add('show');
-      }, 120);
-    });
+    const playPromise = heroVideo.play();
+    if (playPromise && playPromise.catch) {
+      playPromise.catch(() => {
+        // Autoplay was blocked (rare with muted+playsinline) — retry once
+        // the page has had user interaction, or on the loadeddata event.
+        heroVideo.addEventListener('loadeddata', () => heroVideo.play().catch(() => {}), { once: true });
+      });
+    }
   }
 
   // Reveal-on-scroll

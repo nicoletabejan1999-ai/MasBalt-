@@ -53,14 +53,9 @@ ul{ margin: 0; padding: 0; list-style: none; }
   width: auto;
   filter: drop-shadow(0 2px 6px rgba(0,0,0,.6));
 }
-.fab-whatsapp{
-  position: fixed;
-  bottom: 22px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 200;
-  width: 58px;
-  height: 58px;
+.bar-whatsapp{
+  width: 40px;
+  height: 40px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -68,26 +63,26 @@ ul{ margin: 0; padding: 0; list-style: none; }
   border-radius: 50%;
   background: #25D366;
   color: #fff;
-  box-shadow: 0 10px 30px -8px rgba(37,211,102,.65);
+  box-shadow: 0 4px 14px -4px rgba(37,211,102,.6);
   animation: wa-vibrate 4.5s ease-in-out infinite;
 }
-.fab-whatsapp svg{ width: 28px; height: 28px; }
-.fab-whatsapp:hover{ filter: brightness(1.08); }
+.bar-whatsapp svg{ width: 20px; height: 20px; }
+.bar-whatsapp:hover{ filter: brightness(1.08); }
 
 @keyframes wa-vibrate{
-  0%, 12%, 100%{ transform: translateX(-50%) rotate(0deg); }
-  1%{ transform: translateX(-50%) rotate(-16deg); }
-  2%{ transform: translateX(-50%) rotate(14deg); }
-  3%{ transform: translateX(-50%) rotate(-12deg); }
-  4%{ transform: translateX(-50%) rotate(10deg); }
-  5%{ transform: translateX(-50%) rotate(-8deg); }
-  6%{ transform: translateX(-50%) rotate(6deg); }
-  7%{ transform: translateX(-50%) rotate(-4deg); }
-  8%{ transform: translateX(-50%) rotate(2deg); }
+  0%, 12%, 100%{ transform: rotate(0deg); }
+  1%{ transform: rotate(-16deg); }
+  2%{ transform: rotate(14deg); }
+  3%{ transform: rotate(-12deg); }
+  4%{ transform: rotate(10deg); }
+  5%{ transform: rotate(-8deg); }
+  6%{ transform: rotate(6deg); }
+  7%{ transform: rotate(-4deg); }
+  8%{ transform: rotate(2deg); }
 }
 
 @media (prefers-reduced-motion: reduce){
-  .fab-whatsapp{ animation: none; }
+  .bar-whatsapp{ animation: none; }
 }
 
 /* ---------- hero ---------- */

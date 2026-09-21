@@ -97,6 +97,7 @@ ul{ margin: 0; padding: 0; list-style: none; }
 }
 .hero-media{ position: absolute; inset: 0; }
 .hero-img{
+  position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
   animation: kenburns 22s ease-in-out infinite alternate;
@@ -104,6 +105,13 @@ ul{ margin: 0; padding: 0; list-style: none; }
 @keyframes kenburns{
   from{ transform: scale(1); }
   to{ transform: scale(1.09); }
+}
+/* Different hero photo per breakpoint — the mobile crop below 768px,
+   the wider landscape shot at/above it. */
+.hero-img--desktop{ display: none; }
+@media (min-width: 768px){
+  .hero-img--mobile{ display: none; }
+  .hero-img--desktop{ display: block; }
 }
 .hero-fade{
   position: absolute; inset: 0;

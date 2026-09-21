@@ -441,6 +441,22 @@ ul{ margin: 0; padding: 0; list-style: none; }
 .testimonial{ padding: 100px 6vw; border-bottom: 1px solid var(--line); }
 .testimonial .work-head{ margin-bottom: 40px; }
 .testimonial .work-head h2{ margin: 0; }
+.testimonial-head{ display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.google-badge{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #161617;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px 18px;
+  transition: border-color .2s ease, transform .2s ease;
+}
+.google-badge:hover{ border-color: var(--orange); transform: translateY(-2px); }
+.google-badge-text{ font-size: .95rem; color: #fff; white-space: nowrap; }
+.google-badge-text strong{ font-size: 1.15rem; font-weight: 800; }
+.google-badge-sep{ color: var(--dim); }
+.google-badge-arrow{ color: var(--dim); margin-left: 2px; flex-shrink: 0; }
 .t-grid{ display: grid; grid-template-columns: 1fr; gap: 20px; }
 .t-card{
   margin: 0;

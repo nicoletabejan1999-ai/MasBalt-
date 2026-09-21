@@ -8,13 +8,30 @@ document.addEventListener('DOMContentLoaded', () => {
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  // Hero video caption sync — captions live in the DOM (not baked into the
-  // video) so they're never clipped by object-fit: cover on tall viewports.
-  const heroVideo = document.querySelector('.hero-video');
+  // Hero video — a wider single-shot clip on tablet/desktop, the
+  // multi-service montage (with synced captions) on phone until a
+  // phone-specific clip replaces it.
+  const heroVideo = document.getElementById('heroVideo');
   const heroCaption = document.getElementById('heroCaption');
   const heroCaptionTag = document.getElementById('heroCaptionTag');
   const heroCaptionText = document.getElementById('heroCaptionText');
-  if (heroVideo && heroCaption) {
+  const heroIsWide = window.matchMedia('(min-width: 768px)');
+
+  if (heroVideo) {
+    if (heroIsWide.matches) {
+      heroVideo.poster = 'images/hero-bg-video-poster.jpg';
+      heroVideo.src = 'images/hero-bg-video.mp4';
+    } else {
+      heroVideo.poster = 'images/hero-reel-poster.jpg';
+      heroVideo.src = 'images/hero-reel.mp4';
+    }
+    heroVideo.load();
+  }
+
+  // Captions live in the DOM (not baked into the video) so they're never
+  // clipped by object-fit: cover on tall viewports. Only relevant to the
+  // mobile montage, which has distinct labeled segments.
+  if (heroVideo && heroCaption && !heroIsWide.matches) {
     const HERO_TIMELINE = [
       { start: 0.0, end: 1.95, tag: null, caption: 'UTILAJE PROPRII. ECHIPE PREGĂTITE.' },
       { start: 1.95, end: 3.7, tag: '01', caption: 'CURĂȚARE & PREGĂTIRE TEREN' },

@@ -138,6 +138,12 @@ ul{ margin: 0; padding: 0; list-style: none; }
   .hero-caption{ top: 92px; padding: 8px 14px; max-width: calc(100% - 12vw); }
   .hero-caption-text{ font-size: .74rem; }
 }
+
+/* Captions only apply to the mobile montage's labeled segments — the
+   tablet/desktop hero clip is a single shot with nothing to caption. */
+@media (min-width: 768px){
+  .hero-caption{ display: none; }
+}
 .hero-content{
   position: relative;
   z-index: 1;

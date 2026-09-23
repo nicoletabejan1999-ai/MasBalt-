@@ -66,17 +66,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const rows = document.querySelectorAll('.svc-row');
 
   // Service list — tap/click a service to see the equipment used for it
-  const FLEET_TOTAL = 36;
   const EQUIPMENT = {
     scania: { img: 'images/eq-scania.webp', label: 'Autobasculantă Scania G490' },
     cat: { img: 'images/eq-cat.webp', label: 'Excavator Caterpillar M316D' },
-    e50: { img: 'images/eq-e50.webp', label: 'Mini-excavator Bobcat E50' },
+    e50: { img: 'images/eq-e50.webp', label: 'Miniexcavator Bobcat E50' },
     s185: { img: 'images/eq-s185.webp', label: 'Încărcător frontal Bobcat S185' },
     jcb: { img: 'images/eq-jcb.webp', label: 'Buldoexcavator JCB 3CX' },
-    dynapac: { img: 'images/eq-dynapac.webp', label: 'Compactor Dynapac 10T' },
+    dynapac: { img: 'images/eq-dynapac.webp', label: 'Compactor Dynapac de 10 t' },
     'komatsu-d37': { img: 'images/eq-komatsu-d37.webp', label: 'Buldozer Komatsu D37PX-23' },
     'komatsu-pc78': { img: 'images/eq-komatsu-pc78.webp', label: 'Excavator pe șenile Komatsu PC78' },
-    actros: { img: 'images/eq-actros.webp', label: 'Evacuator Mercedes-Benz Actros' },
+    actros: { img: 'images/eq-actros.webp', label: 'Platformă transport utilaje Actros' },
   };
 
   rows.forEach(row => {
@@ -90,11 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
       .filter(Boolean)
       .map(eq => `<div class="svc-eq-card"><img src="${eq.img}" alt="${eq.label}" loading="lazy"><span>${eq.label}</span></div>`)
       .join('');
-    const restCount = FLEET_TOTAL - slugs.length;
     panel.innerHTML = `
       <div class="svc-panel-inner">
         ${cardsHtml}
-        <p class="svc-panel-more">+ restul parcului — <a href="#parc">${restCount}+ utilaje proprii →</a></p>
+        <p class="svc-panel-more"><a href="#parc">Vezi întregul parc de utilaje →</a></p>
       </div>`;
 
     top.addEventListener('click', () => {

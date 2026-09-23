@@ -554,6 +554,8 @@ ul{ margin: 0; padding: 0; list-style: none; }
 .consent{ display: flex; align-items: flex-start; gap: 10px; padding: 6px 4px; cursor: pointer; }
 .consent input{ width: 16px; height: 16px; margin-top: 3px; accent-color: var(--orange); flex-shrink: 0; }
 .consent span{ font-size: .8rem; color: var(--dim); line-height: 1.4; }
+.consent span a{ color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.consent span a:hover{ color: var(--orange); }
 .form-ok{ display: none; color: var(--orange); font-size: .9rem; text-align: center; margin: 6px 0 0; }
 .form-ok.show{ display: block; }
 
